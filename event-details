@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8">
+  <title>Event Details</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+ <header>
+   <h1>Astraea Robotics Club</h1>
+   <nav>
+     <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="registration.html">Register</a></li>
+      <li><a href="registrations-list.html">Registrations</a></li>
+      <li><a href="about.html">About</a></li>
+     </ul>
+   </nav>  
+ </header>
+
+ <main>
+   <h2>Sirius Workshop</h2>
+   <p><strong>Date:</strong> 2026-08-01</p> 
+   <p><strong>Location</strong> Robotics Lab 2</p>
+   <p>A beginner-frindly workshop where students build thier first simple robot using basic sensors and motors.</p>
+   <h3>Workshop Topics</h3>
+   <ul>
+    <li>Basic robot components</li>
+    <li>Simple motor control</li>
+    <li>Introduction to sensors</li>
+   </ul>
+ </main>
+
+ <footer>
+  <p>&copy; 2026 Astraea Robotics Club - All rights reserved.</p>
+</footer>
+
+</body>
+</html>
