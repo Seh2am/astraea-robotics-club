@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Event Details</title>
   <link rel="stylesheet" href="style.css"> 
+  <script src="event-data.js"></script>
 </head>
 
 <body>
@@ -20,19 +21,44 @@
    </nav>  
  </header>
 
- <main>
-   <h2>Sirius Workshop</h2>
-   <p><strong>Date:</strong> 2026-08-01</p> 
-   <p><strong>Location</strong> Robotics Lab 2</p>
-   <p>A beginner-frindly workshop where students build thier first simple robot using basic sensors and motors.</p>
-   <h3>Workshop Topics</h3>
-   <ul>
-    <li>Basic robot components</li>
-    <li>Simple motor control</li>
-    <li>Introduction to sensors</li>
-   </ul>
- </main>
+<h1 id="event-title"></h1>
+  <p><strong>Date:</strong> <span id="event-date"></span></p>
+  <p><strong>Location:</strong> <span id="event-location"></span></p>
+  <p id="event-description"></p>
+  <h3>Workshop Topics</h3>
+  <ul id="event-topics"></ul>
 
+<script>
+  const parsms = new 
+    URLSearchParams(window.location.search);
+  const eventId = params.get('id');
+  const event = events.find(e => e.id === eventId);
+
+  if (event) {
+    document.getElementById('event-title').textContent =event.title;
+    document.getElementById('event-date').textContent =event.date;
+    document.getElementById('event-location').textContent =event.location;
+    document.getElementById('event-description').textContent =event.description;
+
+    const topicsList =
+      document.getElementById('event-topics');
+    if (event.topics && events.topics.length > 0 ) {
+      event.topics.forEach(topic => {
+        const li =
+          document.createElement('li');
+        li.textContent = topic;
+        topicList.appendChild(li);
+      });
+
+    } else { 
+      topicList.style.display = 'none';
+      document.querySelector('h3').style.display = 'none';
+    }
+  } else {
+      document.getElementById('event-title').textContent = "Event not found";
+  }  
+</script>  
+  
  <footer>
   <p>&copy; 2026 Astraea Robotics Club - All rights reserved.</p>
 </footer>
