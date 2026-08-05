@@ -35,15 +35,7 @@ foreach ($events as $e) {
   }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Event Details</title>
-  <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
   <?php include 'header.php'; ?>
 
 
@@ -67,5 +59,3 @@ foreach ($events as $e) {
   <?php endif; ?>
 
   <?php include 'footer.php'; ?>
-</body>
-</html>
