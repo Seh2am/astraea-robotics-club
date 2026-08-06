@@ -1,6 +1,4 @@
-<?php include 'header.php'; ?>
-
-<main>
+<?php include 'header.php'; include 'db-connect.php'; ?>
 <h2>Welcome to Astraea</h2>
 <p>Build cool robots, try new ideas, and have fun with the team.</p>
 
@@ -9,17 +7,20 @@
 
 <h3>Club Activities</h3>
 <ol>
-<li>Join fun workshops and hands-on sessions.</li>
-<li>Build smart robots with your teammates.</li>
-<li>Take on challenges and show your ideas.</li>
+    <li>Join fun workshops and hands-on sessions.</li>
+    <li>Build smart robots with your teammates.</li>
+    <li>Take on challenges and show your ideas.</li>
 </ol>
 
 <h3>Upcoming Events</h3>
 <ul>
-<li>Sirius Workshop - 2026-08-01</li>
-<li>Antares Competition - 2026-08-05</li>
-<li>Elephant Mountain Field Trip - 2026-08-10</li>
+<?php
+$sql = "SELECT title, event_date FROM events ORDER BY event_date ASC LIMIT 3";
+$result = mysqli_query($conn, $sql);
+while ($row = mysqli_fetch_assoc($result)) {
+    echo "<li>" . htmlspecialchars($row["title"]) . " - " . $row["event_date"] . "</li>";
+}
+mysqli_close($conn);
+?>
 </ul>
-</main>
-
-<?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?> 
